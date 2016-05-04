@@ -7,11 +7,11 @@ var $           = require('gulp-load-plugins')();
 gulp.task('sass', function () {
     gulp.src('app/css/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest("app/css"))
+        .pipe(gulp.dest("app/css"));
         
     gulp.src('app/css/skins/default/*.scss')
         .pipe(sass())
-        .pipe(gulp.dest("app/css/skins/default"))
+        .pipe(gulp.dest("app/css/skins/default"));
 });
 
 gulp.task('insert', function(){

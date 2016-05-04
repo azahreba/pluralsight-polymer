@@ -1,45 +1,16 @@
 <dom-module id="pd-drawer">
     <template>
-        <div id="drawer" class$="{{mainClasses}}">
-            <div class="c-p paper-toolbar p-l-05 p-r-05 shadow-bottom">
-                <div class="scrim" on-click="closeDrawers"></div>
-                <paper-icon-button class="left-show-btn f-left" icon="menu" title="menu" on-click="toggleLeft"></paper-icon-button>
-                <div class="pd-toolbar-header p-l-05 f-left">
+        <p>One way binding JS -> Html: <input type="text" value="{{leftShow}}">
+        </p>
+        <p>Two way binding JS <-> Html: <input type="text"
+                                               value="{{leftShow::input}}"></p>
 
-                    <content select=".logo"></content>
+        <p>Two way binding with notify=true: <input type="text" value="{{rightShow::input}}"></p>
+        <p>Two way binding with [[]]: <input type="text" value="[[rightShow]]"></p>
+        <p>left <span>{{leftShow}}</span></p>
+        <p>right <span>{{rightShow}}</span></p>
 
-                </div>
-                <paper-icon-button class="right-show-btn f-right" icon="more-vert" title="more-vert" on-click="toggleRight"></paper-icon-button>
-            </div>
-            <div class="main c-n-dark">
-                <div class="main-section">
-
-                    <content select="#main"></content>
-
-                </div>
-                <div class="scrim" on-click="closeDrawers"></div>
-                <div class="left-drawer c-n-light shadow-right">
-                    <div class="drawer-inner">
-                        <div class="drawer-inner-width">
-
-                            <content select=".left-menu"></content>
-
-                            <paper-icon-button class="pin-btn c-text-light" icon="turned-in" title="turned-in" on-click="pinLeft"></paper-icon-button>
-                        </div>
-                    </div>
-                </div>
-                <div class="right-drawer c-n-light shadow-left">
-                    <div class="drawer-inner">
-                        <div class="drawer-inner-width">
-
-                            <content select=".right-menu"></content>
-
-                            <paper-icon-button class="pin-btn c-text-light" icon="turned-in" title="turned-in" on-click="pinRight"></paper-icon-button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div id="drawer" class$="{{mainClasses}}"></div>
     </template>
 </dom-module>
 
